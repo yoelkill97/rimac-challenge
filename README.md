@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🛡️ Challenge RIMAC Seguros Web
 
-Currently, two official plugins are available:
+## 🚀 Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto es la solución a un reto de desarrollo web para implementar la interfaz de cotización de **RIMAC Seguros Salud Flexible**. Su propósito es ofrecer una experiencia de usuario fluida y responsiva para que los usuarios puedan cotizar y seleccionar los planes de salud que ofrece la compañía.
 
-## React Compiler
+El desarrollo se realiza en **React con TypeScript** para asegurar la robustez, el tipado estricto y la mantenibilidad.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🏛️ Arquitectura Limpia (Clean Architecture)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+El código sigue una estructura de **Arquitectura Limpia (Clean Architecture)**. Esto aísla la lógica de negocio de la UI y la infraestructura, garantizando la escalabilidad y facilitando las pruebas.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+La estructura clave del repositorio es la siguiente:
+
+## 🛠️ Tecnologías y Herramientas
+El proyecto fue desarrollado utilizando el siguiente stack tecnológico y herramientas de desarrollo modernas
+
+**Lenguaje:** TypeScript
+
+**Enrutamiento:** react-router-dom
+
+**Dev Server:** Vite
+
+**Estilos** Sass (sass-embedded)
+
+**Iconografía** lucide-react
+
+**Api** Fetch
+
+
+
+## ✨ Reto y Lógica de Negocio
+
+El flujo de la aplicación se centra en consumir y manipular los planes de salud basados en el siguiente Api, aplicando reglas de negocio antes de la presentación:
+
+**Fuente de Datos**
+
+[Planes](https://rimac-front-end-challenge.netlify.app/api/plans.json) | [Usuario](https://rimac-front-end-challenge.netlify.app/api/user.json)
+
+## ⚙️ Instalación y Ejecución
+
+Sigue estos pasos para configurar y ejecutar el proyecto localmente.
+
+### 1. Clonar el repositorio:
+```bash
+  git clone https://github.com/yoelkill97/rimac-challenge.git
+  cd rimac-challenge
+```
+### 2. Instalar dependencias:
+```bash
+  npm install
+  # o
+  yarn install
+```
+### 3. Ejecutar el proyecto en modo desarrollo:
+```bash
+  npm run dev
+  # o
+  yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Author
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [@yoelkill97](https://github.com/yoelkill97)
