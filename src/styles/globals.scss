@@ -1,0 +1,45 @@
+$primary-blue: #007bff; // Ejemplo de azul para el header y botones
+$secondary-blue: #2c2c3e; // Color de fondo más oscuro en el gradiente
+$light-blue: #a3e6ff;   // Color de fondo más claro en el gradiente
+$dark-text: #333;
+$light-text: #fff;
+$gray-text: #666;
+$border-color: #e0e0e0;
+$rimac-red: #d10000; // Para el logo de Rimac
+$footer-bg-dark: #0f0f1d;
+// Gradientes
+$gradient-bg: linear-gradient(to right, #e0a3ff, #a3e6ff); // Fondo principal del layout
+html, body, #root {
+  height: 100%; /* Asegura que HTML, BODY y el contenedor de React (root) ocupen toda la altura */
+  min-height: 100vh;
+    margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'BR Sonoma', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; // Fondo muy claro por defecto
+}
+
+// Estilos base para resetear o dar consistencia
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: $footer-bg-dark; /* Fondo oscuro fuera del layout principal en móvil */
+  }
+}

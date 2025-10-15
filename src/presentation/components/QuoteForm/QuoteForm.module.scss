@@ -1,0 +1,183 @@
+@use "sass:color";
+@use '../../../styles/globals.scss' as *; 
+
+
+.quoteForm {
+    background-color: $light-text; // Fondo blanco para el formulario
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 480px; // Ancho máximo similar al de la imagen
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); // Sombra suave
+    margin-left: 50px; // Ajusta el espacio a la izquierda de la imagen
+
+    .badge {
+        background-color: #62cf7f; // Un verde para el badge
+        color: $light-text;
+        padding: 5px 15px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 2.2em;
+        font-weight: bold;
+        color: $dark-text;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 1em;
+        color: $gray-text;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .inputGroup {
+            display: flex;
+            gap: 10px; // Espacio entre el select y el input de DNI
+            width: 100%;
+
+            .dniType {
+                flex: 0.35; // Ocupa un 35% del espacio
+            }
+
+            .dniNumber {
+                flex: 0.65; // Ocupa el 65% restante
+            }
+
+            .select,
+            .input {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid $border-color;
+                border-radius: 8px;
+                font-size: 1em;
+                color: $dark-text;
+                background-color: #f9f9f9; // Fondo ligeramente gris para inputs
+                outline: none;
+
+                &:focus {
+                    border-color: $primary-blue;
+                    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+                }
+            }
+        }
+
+        .checkboxGroup {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .checkboxContainer {
+                display: block;
+                position: relative;
+                padding-left: 25px;
+                cursor: pointer;
+                font-size: 0.9em;
+                color: $gray-text;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 18px;
+                    width: 18px;
+                    background-color: #eee;
+                    border: 1px solid $border-color;
+                    border-radius: 4px;
+                }
+
+                &:hover input~.checkmark {
+                    background-color: #ccc;
+                }
+
+                input:checked~.checkmark {
+                    background-color: $primary-blue;
+                    border-color: $primary-blue;
+                }
+
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+
+                input:checked~.checkmark:after {
+                    display: block;
+                }
+
+                .checkmark:after {
+                    left: 6px;
+                    top: 2px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 2px 2px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .termsLink {
+            font-size: 0.9em;
+            color: $gray-text;
+
+            a {
+                color: $primary-blue;
+                text-decoration: underline;
+
+                &:hover {
+                    background-color: color.adjust($primary-blue, $lightness: -10%);
+                }
+            }
+        }
+
+        .quoteButton {
+            background-color: $secondary-blue; // Botón oscuro como en la imagen
+            color: $light-text;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: color.adjust($secondary-blue, $lightness: -10%);
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .quoteForm {
+        margin-left: 0;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 30px 20px;
+    }
+}

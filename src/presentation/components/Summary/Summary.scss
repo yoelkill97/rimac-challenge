@@ -1,0 +1,79 @@
+.resumen {
+  width: 100vw;
+  max-width: 100%;
+  padding: 2rem 1rem 3rem; 
+  background-color: #f8f9ff;
+  box-sizing: border-box;
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #4f4fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem; 
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem; 
+    color: #1d1d1d;
+    width: 70%;
+    margin: 0 auto; 
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 70px;
+    width: 70%;
+    margin: 0 auto; 
+  }
+
+  &__subtitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  &__user {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1d1d1d;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    margin-top: 1rem;
+
+    .label {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #666;
+    }
+
+    p {
+      margin: 0.1rem 0;
+      color: #1d1d1d;
+    }
+  }
+}

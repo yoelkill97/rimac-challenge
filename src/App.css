@@ -1,0 +1,50 @@
+/* src/App.scss */
+.content-wrapper {
+    display: flex; 
+    /* 2. Default to Row */
+    flex-direction: row; 
+    
+    /* Control alignment and spacing */
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center; /* Centers items vertically */
+    gap: 50px; /* Space between the ImageCard and QuoteForm */
+    
+
+    max-width: none;
+    margin: 0 auto;
+    padding: 50px 20px 50px 50px;
+    
+}
+
+.main-content-area {
+    padding-top: 70px; /* <--- AJUSTA ESTE VALOR al alto exacto del Header */
+}
+
+/* --- Adaptación Móvil (Menos de 768px) --- */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+
+    /* El formulario ocupará el 100% del ancho del contenedor en móvil */
+    .quote-form-container {
+      /* Asegúrate de que tu QuoteForm esté envuelto en una clase o usa :global */
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    /* En móvil, el contenedor se vuelve el fondo del formulario */
+    background-color: #f7f7f7;
+    border-radius: 0;
+    justify-content: center;
+    /* Centramos en móvil/tablet */
+    padding: 20px;
+  }
+}

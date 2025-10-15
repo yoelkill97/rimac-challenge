@@ -1,0 +1,74 @@
+/* src/components/Header/Header.module.scss */
+@use '../../../styles/globals.scss' as *; 
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: $light-text;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid $rimac-red;
+
+  .leftContent {
+    .logo {
+      height: 30px; // Ajusta el tamaño del logo
+    }
+  }
+
+  .rightContent {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .callToAction {
+      color: $gray-text;
+      font-size: 0.9em;
+      // Ocultar en móvil
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .phoneNumber {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      color: $dark-text;
+      font-size: 1.1em;
+
+      .phoneIcon {
+        margin-right: 5px;
+        color: $rimac-red;
+      }
+    }
+  }
+}
+
+// Media queries para hacerlo responsivo si es necesario
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    box-shadow: none;
+    border-bottom: none;
+    background-color: #1a1a2e; /* Fondo oscuro en la vista móvil */
+    justify-content: space-between;
+    
+    .leftContent {
+      .logo {
+        filter: brightness(0) invert(1); /* Poner el logo blanco */
+      }
+    }
+
+    .rightContent {
+      .phoneNumber {
+        color: $light-text; /* Número de teléfono blanco */
+      }
+    }
+  }
+}

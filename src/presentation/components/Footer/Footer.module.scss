@@ -1,0 +1,67 @@
+/* src/components/Footer/Footer.module.scss */
+@use '../../../styles/globals.scss' as *; 
+
+.footer {
+  // Estilos del Footer para Escritorio (Fondo Oscuro)
+  background-color: $footer-bg-dark; // Color de fondo oscuro/negro
+  color: $light-text;
+  padding: 40px 50px; // Padding generoso en escritorio
+  width: 100%;
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; // Limitar el ancho del contenido interno
+    margin: 0 auto;
+    
+    .logoWrapper {
+        display: flex; // Para alinear el logo
+        align-items: center;
+        filter: brightness(0) invert(1); 
+    }
+
+    .logo {
+      height: 30px; // Tamaño del logo en escritorio
+    }
+    
+    .copyright {
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ------------------------------------------- */
+/* --- Adaptación Móvil (Menos de 768px) --- */
+/* ------------------------------------------- */
+
+@media (max-width: 768px) {
+  .footer {
+    background-color: #1a1a2e; // Fondo ligeramente más claro que el anterior si es necesario, pero sigue oscuro
+    padding: 20px 20px 40px; // Más padding inferior en móvil
+    
+    .container {
+      flex-direction: column; // Apilar los elementos
+      justify-content: center;
+      align-items: flex-start; // Alinear a la izquierda como en la imagen móvil
+      
+      .logoWrapper {
+        width: 100%;
+        padding-bottom: 20px; // Espacio debajo del logo
+        margin-bottom: 20px; // Espacio para la línea divisora
+        border-bottom: 1px solid rgba($light-text, 0.1); // Línea divisora
+      }
+
+      .logo {
+        height: 25px; // Logo un poco más pequeño en móvil
+      }
+
+      .copyright {
+        width: 100%;
+        text-align: left;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

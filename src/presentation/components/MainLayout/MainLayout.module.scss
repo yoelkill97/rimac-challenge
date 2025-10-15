@@ -1,0 +1,32 @@
+@use '../../../styles/globals.scss' as *;
+
+.mainLayout {
+
+    /* El resorte que empuja el footer */
+    background: $gradient-bg;
+
+    display: grid;
+    flex: 1;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+    .mainLayout {
+        padding-top: 55px;
+        /* Menos padding superior */
+        background: none;
+        /* Elimina el gradiente para usar el fondo del body */
+        align-items: flex-start;
+        
+
+        /* Contenido comienza arriba en lugar de centrarse */
+        // Simular el gradiente solo en la parte superior del contenido
+        .content-wrapper {
+            background: $gradient-bg;
+        }
+    }
+}

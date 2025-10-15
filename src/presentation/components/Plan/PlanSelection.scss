@@ -1,0 +1,108 @@
+.plan-selection {
+  width: 100vw;
+  max-width: 100%; // para altura total sin forzar
+  text-align: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden; // 🔧 evita scroll horizontal
+  background-color: #f8f9ff;
+  box-sizing: border-box; // 🔧 incluye padding en el ancho
+
+  &__back {
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+    color: #4f4fff;
+    font-weight: 500;
+    background: none;
+    border: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+    color: #1d1d1d;
+
+    span {
+      display: block;
+      font-weight: 600;
+      color: #1d1d1d;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+.plan-card {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 240px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1d1d1d;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: #555;
+    color: #1d1d1d;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+  }
+
+  &__radio {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background: white;
+  }
+
+  &.selected {
+    border-color: #232323;
+
+    .plan-card__radio {
+      background-color: #008f39;
+    }
+  }
+}
