@@ -3,7 +3,6 @@ import MainLayout from '../components/MainLayout/MainLayout';
 import ImageCard from '../components/ImageCard/ImageCard';
 import QuoteForm from '../components/QuoteForm/QuoteForm';
 import Footer from '../components/Footer/Footer';
-import '../../App.css'
 
  function MainPage() {
     return (

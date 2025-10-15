@@ -1,11 +1,11 @@
 .plan-selection {
   width: 100vw;
-  max-width: 100%; // para altura total sin forzar
+  max-width: 100%; 
   text-align: center;
   padding: 2rem 1rem;
-  overflow-x: hidden; // 🔧 evita scroll horizontal
-  background-color: #f8f9ff;
-  box-sizing: border-box; // 🔧 incluye padding en el ancho
+  overflow-x: hidden; 
+  background-color: #ffffff;
+  box-sizing: border-box; 
 
   &__back {
     display: flex;

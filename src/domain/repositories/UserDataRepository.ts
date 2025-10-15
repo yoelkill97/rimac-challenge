@@ -1,6 +1,6 @@
-import type { UserData } from "../entities/UserData";
+import type { User } from "../entities/User";
 
 export interface UserDataRepository {
   fetchAndSave(): Promise<void>;
-  get(): UserData | null;
+  get(): User | null;
 }
